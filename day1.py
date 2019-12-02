@@ -3,7 +3,7 @@ from utils import filescan
 
 def dayone_part1():
     ch = filescan(
-        "C:\\Users\\giuse\\OneDrive\\Desktop\\aoc1")  # string with all the file values, there is a number per line
+        'input\\day1')  # string with all the file values, there is a number per line
     mass = [(int(e)) for e in ch]  # array with every number from the file
     result = 0
     for i in mass:
@@ -13,7 +13,7 @@ def dayone_part1():
 
 def dayone_part2():
     ch = filescan(
-        "C:\\Users\\giuse\\OneDrive\\Desktop\\aoc1")  # string with all the file values, there is a number per line
+        'input\\day1')  # string with all the file values, there is a number per line
     mass = [(int(e)) for e in ch]  # array with every number from the file
 
     totalFuel = 0
