@@ -4,5 +4,5 @@ def fileSplitLines(fname):
 
 
 def fileSplitComma(fname):
-    with open('input//day2', "r") as f:
+    with open(fname, "r") as f:
         return f.read().split(',')
