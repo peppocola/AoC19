@@ -1,8 +1,8 @@
-from utils import filescan
+from utils import fileSplitLines
 
 
 def dayone_part1():
-    ch = filescan(
+    ch = fileSplitLines(
         'input\\day1')  # string with all the file values, there is a number per line
     mass = [(int(e)) for e in ch]  # array with every number from the file
     result = 0
@@ -12,7 +12,7 @@ def dayone_part1():
 
 
 def dayone_part2():
-    ch = filescan(
+    ch = fileSplitLines(
         'input\\day1')  # string with all the file values, there is a number per line
     mass = [(int(e)) for e in ch]  # array with every number from the file
 

@@ -1,7 +1,9 @@
+from utils import fileSplitComma
+
+
 def daytwo_part1():
-    with open('input//day2', "r") as f:
-        numbers = f.read().split(',')
-    integers = [int(e) for e in numbers]  # array with every integer from the file
+    info = fileSplitComma('input//day2')
+    integers = [int(e) for e in info]  # array with every integer from the file
 
     integers[1] = 12
     integers[2] = 2
@@ -19,29 +21,28 @@ def daytwo_part1():
 
 
 def daytwo_part2():
-    with open('input//day2', "r") as f:
-        numbers = f.read().split(',')
-    info = [int(e) for e in numbers]  # array with every integer from the file
+    info = fileSplitComma('input//day2')
+    numbers = [int(e) for e in info]  # array with every integer from the file
 
     for noun in range(0, 100):
         for verb in range(0, 100):
-            integers = info.copy()
-            integers[1] = noun
-            integers[2] = verb
+            temp = numbers.copy()
+            temp[1] = noun
+            temp[2] = verb
 
             i = 0
             while 1:
-                if integers[i] == 1:
-                    integers[integers[i + 3]] = integers[integers[i + 1]] + integers[integers[i + 2]]
-                elif integers[i] == 2:
-                    integers[integers[i + 3]] = integers[integers[i + 1]] * integers[integers[i + 2]]
-                elif integers[i] == 99:
-                    integers[i] += 1
+                if temp[i] == 1:
+                    temp[temp[i + 3]] = temp[temp[i + 1]] + temp[temp[i + 2]]
+                elif temp[i] == 2:
+                    temp[temp[i + 3]] = temp[temp[i + 1]] * temp[temp[i + 2]]
+                elif temp[i] == 99:
+                    temp[i] += 1
                     break
-                integers[i] += 4
+                temp[i] += 4
                 i = i + 4
 
-            if integers[0] == 19690720:
+            if temp[0] == 19690720:
                 return 100 * noun + verb
     return 0
 
