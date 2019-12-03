@@ -30,6 +30,38 @@ def daythree_part1():
     return mindistance
 
 
+def daythree_part2():
+    instructions = fileSplitLines('input//day3')
+    wire1 = instructions[0].split(',')
+    wire2 = instructions[1].split(',')
+
+    map = {}
+    intersections = []
+    start = (0, 0)
+    steps = 0
+    for i in wire1:
+        for counter in range(0, int(i[1:])):
+            start = move(i[0], start)
+            steps += 1
+            map[start] = steps
+
+    start = (0, 0)
+    steps = 0
+    for i in wire2:
+        for counter in range(0, int(i[1:])):
+            start = move(i[0], start)
+            steps += 1
+            if start in map:
+                intersections.append(start)
+                map[start] += steps
+
+    minsteps = map[intersections[0]]
+    for i in intersections:
+        if map[i] <= minsteps:
+            minsteps = map[i]
+    return minsteps
+
+
 def moveleft(start):
     return start[0], start[1] - 1
 
@@ -63,3 +95,4 @@ def manhattan(start, i):
 
 if __name__ == "__main__":
     print("part1=" + str(daythree_part1()))
+    print("part2=" + str(daythree_part2()))
