@@ -6,19 +6,19 @@ def daythree_part1():
     wire1 = instructions[0].split(',')
     wire2 = instructions[1].split(',')
 
-    map = {}
+    matrix = {}
     intersections = []
     start = (0, 0)
     for i in wire1:
         for counter in range(0, int(i[1:])):
             start = move(i[0], start)
-            map[start] = 0
+            matrix[start] = 0
 
     start = (0, 0)
     for i in wire2:
         for counter in range(0, int(i[1:])):
             start = move(i[0], start)
-            if start in map:
+            if start in matrix:
                 intersections.append(start)
 
     start = (0, 0)
@@ -35,7 +35,7 @@ def daythree_part2():
     wire1 = instructions[0].split(',')
     wire2 = instructions[1].split(',')
 
-    map = {}
+    matrix = {}
     intersections = []
     start = (0, 0)
     steps = 0
@@ -43,7 +43,7 @@ def daythree_part2():
         for counter in range(0, int(i[1:])):
             start = move(i[0], start)
             steps += 1
-            map[start] = steps
+            matrix[start] = steps
 
     start = (0, 0)
     steps = 0
@@ -51,14 +51,14 @@ def daythree_part2():
         for counter in range(0, int(i[1:])):
             start = move(i[0], start)
             steps += 1
-            if start in map:
+            if start in matrix:
                 intersections.append(start)
-                map[start] += steps
+                matrix[start] += steps
 
-    minsteps = map[intersections[0]]
+    minsteps = matrix[intersections[0]]
     for i in intersections:
-        if map[i] <= minsteps:
-            minsteps = map[i]
+        if matrix[i] <= minsteps:
+            minsteps = matrix[i]
     return minsteps
 
 
