@@ -7,7 +7,7 @@ As the last year i will code for 2 or 3 days and then leave but WHOCARES
 | [Day 1](https://adventofcode.com/2019/day/1)   | [day1.py](./day1.py)                                    |
 | [Day 2](https://adventofcode.com/2019/day/2)   | [day2.py](./day2.py)                                    |
 | [Day 3](https://adventofcode.com/2019/day/3)   | [day3.py](./day3.py)                                    |
-| [Day 4](https://adventofcode.com/2019/day/4)   |                                                         |
+| [Day 4](https://adventofcode.com/2019/day/4)   | [day4.py](./day4.py)                                    |
 | [Day 5](https://adventofcode.com/2019/day/5)   |                                                         |
 | [Day 6](https://adventofcode.com/2019/day/6)   |                                                         |
 | [Day 7](https://adventofcode.com/2019/day/7)   |                                                         |
